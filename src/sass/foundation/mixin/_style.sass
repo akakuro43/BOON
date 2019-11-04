@@ -1,0 +1,43 @@
+
+// IMG
+=setImg($width: auto, $height: auto)
+  display: inline-block
+  width: $width
+  height: $height
+  img
+    width: 100%
+
+=setBgCover($url,$bs:cover)
+  background-image: url($imgmesPath + $url)
+  background-size: $bs
+  background-repeat: no-repeat
+  background-position: 50% 50%
+
+=setBgCoverNone($bs:cover)
+  background-size: $bs
+  background-repeat: no-repeat
+  background-position: 50% 50%
+
+// Clearfix
+=clearfix($important: false)
+  @if ($important == "important")
+    $important: unquote("!important")
+  @else
+    $important: null
+  &:after
+    content: "" $important
+    display: block $important
+    clear: both $important
+
+// Fitparent
+=fitParent($position:absolute)
+  position: $position
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+
+
+// Transition
+=setTransition
+   transition: 0.6s ease

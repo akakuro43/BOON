@@ -1,0 +1,14 @@
+header.l-header
+  .header__logo
+    h1.logo(data-custom-cursor)
+      a.link.u-pc-only(href="/")
+        +logo(80)
+  nav.header__gnav
+    ul.gnav-list
+      li.item.js-hover(data-custom-cursor)
+        a.link(href='/about') About
+  cling.cling-github-link
+    .github-link(data-custom-cursor)
+        +github(24)
+    //-   vueSVG(keyname="github" width="24")
+      a.link(href="https://github.com/akakuro43/BoonVue", target="_blank")

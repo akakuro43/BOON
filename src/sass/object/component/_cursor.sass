@@ -1,0 +1,87 @@
++media-desktop
+  .c-cursor
+    width: 80px
+    height: 80px
+    border-radius: 80px
+    // mix-blend-mode: exclusion
+    z-index: 99999
+    position: fixed
+    text-align: center
+    pointer-events: none
+    display: flex
+    opacity: 0
+    justify-content: center
+    align-items: center
+    .c-pointer
+      width: 60px
+      height: 60px
+      border-radius: 50%
+      // mix-blend-mode: exclusion
+      top: 50%
+      left: 50%
+      display: block
+      position: absolute
+      transform: translate(-50%, -50%) scale(0.1)
+      background: $orange
+    .c-label--scroll,
+    .c-label--pdf,
+    .c-label--click
+      +setEn
+      font-size: 12px
+      letter-spacing: 0.12em
+      opacity: 0
+      color: $white
+      position: relative
+      &.is-label
+        transition: 0.25s 0.1s $ease-out
+        opacity: 1!important
+    .c-label--pdf
+      left: 17px
+    .c-label--click
+      font-size: 10px
+      left: -15px
+    //
+    // .c-label--scroll
+    //   font-size: 30px
+    //   left: 36px
+    //   opacity: 0
+    //   transition-delay: 2.0s!important
+    .c-icon--arrow,
+    .c-icon--external,
+    .c-icon--arrow-back,
+    .c-icon--arrow-down
+      position: absolute
+      top: -12px
+      bottom: 0
+      left: 0
+      right: 0
+      margin: auto
+      height: 1px
+      display: inline-block
+      +setEn
+      opacity: 0
+      color: $white
+      font-weight: $fw-bold
+      transition: 0.1s $ease-out-expo
+      transform: translate3d(12px,0,0)
+      &.is-arrow
+        transition: 0.3s 0.1s $ease-out
+        opacity: 1!important
+        transform: translate3d(0,0,0)
+    .c-icon--arrow-back
+      transform: translate3d(-19px,0,0)
+      left: 14px
+      &.is-arrow
+        transform: translate3d(-7px,0,0)
+    .c-icon--arrow-down
+      transform: translate3d(-7px,-7px,0)
+      left: 14px
+      &.is-arrow
+        transform: translate3d(-7px,0,0)
+    .c-icon--external
+      .c-externalLink
+        fill: $white
+
++media-mobile
+  .c-cursor
+    display: none

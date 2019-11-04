@@ -1,0 +1,67 @@
+extends ./_layout/_page.pug
+
+block vars
+  -
+    var page = data.pages.index;
+
+block contentStatic
+  .l-keyvisual
+    .keyvisual__bg
+
+  main.l-contents
+    section.s-section1
+      .c-inner
+        .js-appear-object
+          h2.title(data-delay-step='80')
+            span.word Featured&nbsp;
+              span.curtain.delay-elem
+            span.word Work
+              span.curtain.delay-elem
+          p.text Look at the latest web site projects
+            span.curtain
+          
+        ul.work-list
+          li.item
+            .js-mouse-parallax-object(data-is-axis-x-only='true', data-is-reverse-x="true")
+              .thumb.js-parallax-object(data-range-y="0.01", data-custom-cursor)
+                .inner
+                  .bg-img(data-src-bg="/assets/images/device/top/work1.jpg")
+                  .curtain
+                  a.link(href="https://unsplash.com/photos/ixedg2mKs3w" target="_blank")
+
+                  .js-appear-object.tag(data-offset=0)
+                    h2.client
+                      span.inline-text BRUCE
+                    p.description
+                      span.inline-text Branding Website
+
+          li.item
+            .js-mouse-parallax-object(data-is-axis-x-only='true', data-is-reverse-x="true")
+              .thumb.js-parallax-object(data-range-y="0.04", data-custom-cursor)
+                .inner
+                  .bg-img(data-src-bg="/assets/images/device/top/work2.jpg")
+                  .curtain
+                  a.link(href="https://unsplash.com/photos/XQvpN3j_mVo" target="_blank")
+                  .js-appear-object.tag(data-offset=0)
+                    h2.client
+                      span.inline-text HOLYOAKE
+                    p.description
+                      span.inline-text Branding Website
+
+          li.item
+            .js-mouse-parallax-object(data-is-axis-x-only='true', data-is-reverse-x="true")
+              .thumb.js-parallax-object(data-range-y="0.07", data-custom-cursor)
+                .inner
+                  .bg-img(data-src-bg="/assets/images/device/top/work3.jpg")
+                  .curtain
+                  a.link(href="https://unsplash.com/photos/yzhLs9Zgwdo" target="_blank")
+
+                  .js-appear-object.tag(data-offset=0)
+                    h2.client
+                      span.inline-text GRUBER
+                    p.description
+                      span.inline-text Branding Website
+
+      
+//- block contentFixedAfter
+  

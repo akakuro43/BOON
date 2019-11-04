@@ -1,0 +1,20 @@
+{
+  "meta": {
+    "websiteName": "BOON",
+    "keywords": ""
+  },
+  "pages": {
+    "index": {
+      "id": "index",
+      "title": "",
+      "description": "",
+      "path": ""
+    },
+    "about": {
+      "id": "about",
+      "title": "ABOUT",
+      "description": "",
+      "path": "/about"
+    }
+  }
+}

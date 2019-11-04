@@ -1,0 +1,22 @@
+// #Main
+  --------------------------------------------------------------------------
+
+.l-contents
+  position: relative
+  z-index: 100
+  // overflow-x: hidden
+  // overflow-y: hidden
+  &.l-contents--basic
+    opacity: 0
+    &.is-leaved-contents
+      opacity: 0
+      transition: .2s
+    &.is-arrived-contents
+      position: relative
+      top: 0
+      opacity: 1
+      transition: .4s .1s
+
+
++media-mobile
+  .l-contents

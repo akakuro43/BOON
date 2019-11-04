@@ -1,0 +1,84 @@
+@charset "utf-8"
+// このスタイルシートは[FLOCSS](https://github.com/hiloki/flocss)をベースにしています。
+   定義されているレイヤー以外にもThemeやTestなどのレイヤーを追加することもできます。
+   詳しくは[CSSコーディングルール](https://github.com/manabuyasuda/styleguide/blob/master/css-coding-rule.md#flocss)を参照してください。
+   参考：https://github.com/manabuyasuda/equip/tree/master/develop/assets/css
+
+// 静的サイト用
+$imgmesPath: ''
+// WPサイト用
+// $imgmesPath: '/wordpress/wp-content/themes/CBKnowledge'
+
+// ==========================================================================
+// #Foundation
+// ==========================================================================
+@import "foundation/variable/_global"
+@import "foundation/variable/_breakpoint"
+@import "foundation/variable/_device-font"
+@import "foundation/variable/_font-weight"
+@import "foundation/variable/_color"
+@import "foundation/variable/_keyframes"
+@import "foundation/variable/_easing"
+@import "foundation/variable/_font"
+@import "foundation/function/_px-to-per"
+@import "foundation/function/em"
+@import "foundation/function/rem"
+@import "foundation/function/strip-unit"
+@import "foundation/mixin/_mq-up"
+@import "foundation/mixin/_mq-down"
+@import "foundation/mixin/_on-event"
+@import "foundation/mixin/_device"
+@import "foundation/mixin/_font"
+@import "foundation/mixin/_style"
+@import "foundation/base/_normalize"
+@import "foundation/base/_base"
+
+// ==========================================================================
+// #Layout
+// ==========================================================================
+@import "layout/_page"
+@import "layout/_header"
+@import "layout/_footer"
+@import "layout/_contents"
+@import "layout/_keyvisual"
+@import "layout/_section"
+@import "layout/_load"
+@import "layout/_background"
+@import "layout/_scroll-bar"
+
+@import "vendor/_swiper"
+
+// --------------------------------------------------------------------------
+// #Component
+// --------------------------------------------------------------------------
+@import "object/component/_headline"
+@import "object/component/_inner"
+@import "object/component/_btn"
+@import "object/component/_select"
+@import "object/component/_svg-icon"
+@import "object/component/_img"
+@import "object/component/_table"
+
+@import "object/component/_appearObject"
+@import "object/component/_smoothScroll"
+// @import "object/component/_accordion"
+// @import "object/component/_cursor"
+// @import "object/component/_pager"
+// @import "object/component/_swiper"
+
+
+
+
+// --------------------------------------------------------------------------
+// #Page
+// --------------------------------------------------------------------------
+@import "object/page/_top"
+
+
+// --------------------------------------------------------------------------
+// #Utility
+// --------------------------------------------------------------------------
+@import "object/utility/_text"
+@import "object/utility/_margin"
+@import "object/utility/_align"
+@import "object/utility/_display"

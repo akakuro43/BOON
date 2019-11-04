@@ -1,0 +1,23 @@
+block vars
+
+include ../_mixin/_svg.pug
+include ../_mixin/_common.pug
+
+doctype html
+html(lang="ja")
+  head
+    include ../_partials/_head.pug
+  body
+    .l-page.js-pjax-page(class=page.id ,data-page-id=page.id)
+      .l-loading
+      include ../_partials/_header.pug
+      .l-scroll-bar
+        .bar#scrollbar
+      .js-smooth-scroll-content.js-pjax-page-wrapper
+        .l-contents.l-contents--basic.js-contents.js-pjax-contents
+          block contentStatic
+          include ../_partials/_footer.pug
+        //- .js-pjax-contents-after
+        //-   block contentFixedAfter
+    .l-bg
+    include ../_partials/_scripts.pug

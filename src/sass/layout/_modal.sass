@@ -1,0 +1,130 @@
++media-desktop
+  .l-modal
+    position: fixed
+    z-index: 99999
+    width: 100vw
+    height: 100vh
+    background: rgba($white, 1)
+    display: flex
+    justify-content: center
+    align-items: center
+    display: none
+    opacity: 0
+    .info-area
+      // +fitParent
+      margin: auto
+      width: 880px
+      // height: 510px
+      background: $white
+      padding: 80px
+      .name
+        font-size: 20px
+        letter-spacing: 0.1em
+      .position
+        margin-top: 18px
+        font-size: 12px
+        +setJpR
+        letter-spacing: 0.1em
+        color: $dark-gray
+      .description
+        +setFont(16px,1.75,60px,40px)
+        letter-spacing: 0.1em
+        +setJpR
+      .close-btn
+        width: 335px
+        height: 58px
+        background: #F7F7F7
+        display: inline-block
+        line-height: 58px
+        margin: 0 auto
+        cursor: pointer
+        display: flex
+        justify-content: center
+        &:hover
+          .text
+            transform: skewX(-20deg)
+            &:before
+              transform: scaleY(1)
+        .text
+          +setEn
+          font-size: 18px
+          letter-spacing: 0.045em
+          position: relative
+          transition: 0.1s $ease-out
+          &:before
+            content: ''
+            position: absolute
+            bottom: 18px
+            width: 100%
+            height: 2px
+            background: $black
+            opacity: 1
+            transform: scaleY(0)
+            transform-origin: bottom
+            transition: 0.1s $ease-out
+
++media-mobile
+  .l-modal
+    position: fixed
+    z-index: 99999
+    width: 100vw
+    height: 100vh
+    background: rgba($white, 1)
+    display: flex
+    justify-content: center
+    align-items: center
+    display: none
+    opacity: 0
+    .info-area
+      // +fitParent
+      margin: auto
+      width: 100%
+      // height: 510px
+      background: $white
+      padding: 32px
+      .name
+        font-size: 18px
+        letter-spacing: 0.1em
+      .position
+        margin-top: 12px
+        line-height: 1.5em
+        font-size: 10px
+        +setJpR
+        letter-spacing: 0.1em
+        color: $dark-gray
+      .description
+        +setFont(13px,1.75,48px,32px)
+        letter-spacing: 0.1em
+        +setJpR
+      .close-btn
+        width: 100%
+        height: 48px
+        background: #F7F7F7
+        display: inline-block
+        line-height: 48px
+        margin: 0 auto
+        cursor: pointer
+        display: flex
+        justify-content: center
+        &:hover
+          .text
+            transform: skewX(-20deg)
+            &:before
+              transform: scaleY(1)
+        .text
+          +setEn
+          font-size: 18px
+          letter-spacing: 0.045em
+          position: relative
+          transition: 0.1s $ease-out
+          &:before
+            content: ''
+            position: absolute
+            bottom: 18px
+            width: 100%
+            height: 2px
+            background: $black
+            opacity: 1
+            transform: scaleY(0)
+            transform-origin: bottom
+            transition: 0.1s $ease-out

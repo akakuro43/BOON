@@ -1,0 +1,29 @@
+- 
+  var titleMerge = (page.title != '') ? page.title + ' │ ' + data.meta.websiteName : data.meta.websiteName;
+  var keywordsMerge = data.meta.keywords;
+
+meta(charset="utf-8")
+meta(http-equiv="X-UA-Compatible", content="IE=edge")
+title #{titleMerge}
+meta(name="viewport", content="width=device-width")
+meta(name="description", content=page.description)
+meta(name="keywords", content=keywordsMerge)
+//- script(src="https://www.googletagmanager.com/gtm.js?id=GTM-XXXX")
+//- style.
+//-   body { background-color: #000; }
+//-   .l-page { visibility: hidden; }
+//- link(rel="preload" as="style" href=data.meta.path + "/assets/css/main.css" onload="this.onload=null;this.rel='stylesheet'")
+link(rel="prefetch", href="/assets/css/main.css")
+link(rel="stylesheet", href="/assets/css/main.css")
+link(rel="icon" href=data.meta.path + "/assets/images/common/favicon.ico")
+link(rel="apple-touch-icon" sizes="180x180" href=data.meta.path + "/assets/images/common/app_icon.png")
+meta(property="og:title", content=titleMerge)
+meta(property="og:site_name", content=data.meta.websiteName)
+meta(property="og:type", content="website")
+meta(property="og:description", content=page.description)
+meta(property="og:url", content=data.meta.domain + data.meta.path + page.path)
+meta(property="og:image", content=data.meta.domain + data.meta.path + '/assets/images/common/ogp.png')
+meta(name="twitter:card", content="summary_large_image")
+meta(name="twitter:title", content=titleMerge)
+meta(name="twitter:description", content=page.description)
+meta(name="twitter:image", content=data.meta.domain + data.meta.path + '/assets/images/common/ogp.png')

@@ -1,0 +1,47 @@
++media-desktop
+  .l-footer
+      position: relative
+      z-index: 99
+      width: 100%
+      height: 320px
+      background: $black
+      .footer__logo
+        position: absolute
+        top: 90px
+        left: 120px
+        .c-logo
+          fill: $white
+      .footer__msg
+        position: absolute
+        top: 104px
+        left: 290px
+        +setFont(14px,1.75)
+        color: $white
+        .c-icon-piece
+          margin-left: 5px
+          top: 3px
+          position: relative
+
+      .footer__gnav
+      .footer__sns
+        position: absolute
+        top: 210px
+        left: 290px
+        .sns-list
+          display: flex
+          justify-content: flex-start
+          align-items: center
+          & > .item
+            &:nth-child(n+2)
+              margin-left: 12px
+            .link
+              svg
+                fill: $white
+      .footer__copyright
+        +setEn
+        font-weight: $fw-regular
+        font-size: 12px
+        position: absolute
+        color: rgba($white,0.5)
+        right: 32px
+        bottom: 40px

@@ -1,0 +1,32 @@
+// webフォントを使用場合のimportの記述とfont-familyの指定をする。
+// Google Font ⇒ https://fonts.google.com/
+
+
+// web-fontのimport定義
+// FontAwesome
+// @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css)
+// NotoSans
+// @import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css)
+// Roboto
+// @import url(https://fonts.googleapis.com/css?family=Roboto)
+// Montserrat
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700,800&display=swap')
+
+@font-face
+  font-family: "NotoSansCJKjp"
+  font-weight: 700
+  src: url("/assets/fonts/NotoSans_bold.woff") format('woff'), url('/assets/fonts/NotoSans_bold.otf') format('opentype')
+@font-face
+  font-family: "NotoSansCJKjp"
+  font-weight: 900
+  src: url("/assets/fonts/NotoSans_black.woff") format('woff'), url('/assets/fonts/NotoSans_black.otf') format('opentype')
+
+@font-face
+  font-family: "NotoSansCJKjp"
+  font-weight: 400
+  src: url("/assets/fonts/NotoSans_regular.woff") format('woff'), url('/assets/fonts/NotoSans_regular.otf') format('opentype')
+
+// オリジナルフォントファミリーの定義
+// $font-family-origin: 'NotoSansCJKjp', sans-serif
+$font-family-en:  "Montserrat", sans-serif
+$base-font-family: "NotoSansCJKjp", "Yu Gothic", sans-serif

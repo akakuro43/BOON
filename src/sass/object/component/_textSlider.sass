@@ -1,0 +1,20 @@
++media-desktop
+  .c-text-slider
+    position: absolute
+    z-index: 1
+    top: -220px
+    .canvas
+      transform: rotate(-15deg) translateX(-10vw)
++media-mobile
+  .c-text-slider
+    position: absolute
+    z-index: 1
+    width: 100vw
+    overflow: hidden
+    .canvas
+      position: relative
+      top: -70px
+      transform: rotate(-15deg) translateX(-25vw)
+    .cover
+      +fitParent
+      z-index: 2

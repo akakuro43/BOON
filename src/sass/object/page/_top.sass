@@ -1,0 +1,118 @@
+.index
+  +media-desktop
+    .s-section1
+      padding-top: 200px
+      padding-bottom: 100px
+      .is-appear
+        .title
+          transform: translateY(0)
+          transition: 1.2s $ease
+          .word
+            .curtain
+              transform: scaleY(0)
+              transition: 0.8s $ease-in-out-quart
+        .text
+          transform: translateY(0)
+          transition: 1.2s 0.1s $ease
+          .curtain
+            transform: scaleY(0)
+            transition: 0.8s 0.2s $ease-in-out-quart
+      .title
+        +setEn
+        font-weight: $fw-bold
+        font-size: 48px
+        letter-spacing: 0.05em
+        transform: translateY(60px)
+
+        .word
+          position: relative
+          .curtain
+            content: ''
+            +fitParent
+            background: $white
+            transform-origin: top
+      .text
+        +setEn
+        font-weight: $fw-light
+        font-size: 13px
+        color: #333
+        margin-top: 32px
+        letter-spacing: 0.15em
+        position: relative
+        display: inline-block
+        transform: translateY(60px)
+        .curtain
+          +fitParent
+          height: 15px
+          background: $white
+          transform-origin: top
+
+      .work-list
+        margin-top: 110px
+        &>.item
+          &:nth-child(2)
+            margin-top: 100px
+          &:nth-child(3)
+            margin-top: 60px
+          &:nth-child(even)
+            display: flex
+            justify-content: flex-end
+            .tag
+              left: -70px
+          &:nth-child(odd)
+            .tag
+              right: -70px
+          .thumb
+            position: relative
+            width: 680px
+            height: 480px
+            .inner
+              +fitParent
+              perspective: 1000px
+              .bg-img
+                +fitParent
+                +setBgCoverNone
+                transition: 0.95s $ease-boon
+              .js-bg-img
+              &:hover
+                .bg-img
+                  transform: scale(.95) rotateY(-3deg)!important
+            .link
+              +fitParent
+            .tag
+              position: absolute
+              bottom: 60px
+              .client
+                +setEn
+                font-size: 36px
+                transform: translateY(60px)
+                display: inline-block
+                .inline-text
+                  display: inline
+                  opacity: 0
+                  clip-path: inset(100% 0% 0% 0%)
+              .description
+                +setEn
+                margin-top: 20px
+                font-size: 14px
+                font-weight: $fw-regular
+                transform: translateY(50px)
+                .inline-text
+                  display: inline
+                  opacity: 0
+                  clip-path: inset(100% 0% 0% 0%)
+              &.is-appear
+                .client
+                  transform: translateY(0)
+                  transition: 1.2s $ease
+                  .inline-text
+                    opacity: 1
+                    clip-path: inset(0% 0% 0% 0%)
+                    transition: 0.8s $ease-in-out-quart
+                .description
+                  transform: translateY(0)
+                  transition: 1.2s 0.1s $ease
+                  .inline-text
+                    opacity: 1
+                    clip-path: inset(0% 0% 0% 0%)
+                    transition: 0.8s 0.2s $ease-in-out-quart

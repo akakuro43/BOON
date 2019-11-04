@@ -1,0 +1,12 @@
+.c-accordion
+  .c-accordion__trigger
+  .c-accordion__target
+    opacity: 0
+    overflow: hidden
+  .c-accordion-ease
+    transition-duration: 0.4s
+    transition-timing-function: $ease-in-out-circ
+    // transition-property: height
+  &.is-open
+    .c-accordion__target
+      opacity: 1

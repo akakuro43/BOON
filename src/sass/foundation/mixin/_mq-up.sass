@@ -1,0 +1,9 @@
+=mq-up($breakpoint: $default-breakpoint)
+  @if map-has-key($breakpoint-up, $breakpoint)
+    @media #{inspect(map-get($breakpoint-up, $breakpoint))}
+      @content
+
+
+=mq-up-px($pixel)
+  @media screen and (min-width: $pixel)
+    @content

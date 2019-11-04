@@ -1,0 +1,7 @@
+=media-desktop
+  @media #{inspect(map-get($breakpoint-up, md))}
+    @content
+
+=media-mobile
+  @media #{inspect(map-get($breakpoint-down, md))}
+    @content

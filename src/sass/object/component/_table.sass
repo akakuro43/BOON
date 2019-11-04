@@ -1,0 +1,51 @@
++media-desktop
+  .c-table--col1
+    & > .item
+      padding: 32px 0
+      border-bottom: 1px solid $light-gray
+      &:first-child
+        border-top: 1px solid $light-gray
+      .value
+        width: 100%
+        +setFont(13px,2)
+        font-weight: $fw-regular
+
+  .c-table--col2
+    & > .item
+      display: flex
+      padding: 32px 0
+      border-bottom: 1px solid $light-gray
+      &:first-child
+        border-top: 1px solid $light-gray
+      .key
+        width: 140px
+        padding-right: 32px
+        +setFont(12px,1.74)
+      .value
+        width: calc(100% - 140px)
+        +setFont(12px,1.74)
+        font-weight: $fw-regular
+
++media-mobile
+  .c-table--col1
+    & > .item
+      padding: 20px 0
+      border-bottom: 1px solid $light-gray
+      &:first-child
+        border-top: 1px solid $light-gray
+      .value
+        width: 100%
+        +setFont(12px,2)
+        font-weight: $fw-regular
+
+  .c-table--col2
+    & > .item
+      padding: 20px 0
+      border-bottom: 1px solid $light-gray
+      &:first-child
+        border-top: 1px solid $light-gray
+      .key
+        +setFont(12px,1.74)
+      .value
+        +setFont(12px,1.74,0,16px)
+        font-weight: $fw-regular

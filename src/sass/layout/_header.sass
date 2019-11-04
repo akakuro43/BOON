@@ -1,0 +1,38 @@
+.l-header
+  position: fixed
+  z-index: 1000
+  width: 100%
+  left: 0
+  top: 0
++media-desktop
+  .l-header
+    .header__logo
+      position: absolute
+      top: 30px
+      left: 30px
+    .header__gnav
+      position: absolute
+      top: 44px
+      right: 30px
+      .gnav-list
+        display: flex
+        & > .item
+          &:nth-child(n+2)
+            margin-left: 16px
+    .cling-github-link
+      position: fixed
+      right: 32px
+      bottom: 32px
+      width: 44px
+      height: 44px
+    .github-link
+      width: 44px
+      height: 44px
+      display: flex
+      justify-content: center
+      align-items: center
+      border: 1px solid $black
+      border-radius: 50%
+      position: relative
+      .link
+        +fitParent
