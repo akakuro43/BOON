@@ -19,7 +19,7 @@ export default class AnchorLink {
       const target = document.querySelector(hash)
       if(target == null) return
       const targetRect = target.getBoundingClientRect()
-      anchorY = Number(this.stores.scroll.vertialScrollTop) + targetRect.top
+      anchorY = Number(this.stores.scroll.smoothScroll) + targetRect.top
 
       if(this.stores.device.isPC) {
         anchorY = anchorY + anchorOffsetPC
