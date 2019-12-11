@@ -1,14 +1,21 @@
-const gulp = require('gulp');
+const gulp = require('gulp')
 
-const $ = require('../plugins');
-const DOMAIN = require('../conf').DOMAIN;
-const DIR = require('../conf').DIR;
-const conf = require('../conf').pug;
+const $ = require('../plugins')
+const DOMAIN = require('../conf').DOMAIN
+const DIR = require('../conf').DIR
+const conf = require('../conf').pug
 
 gulp.task('pug', () => {
-  const data = require(`../../${conf.json}`);
-  data.meta.domain = DOMAIN;
-  data.meta.path = DIR.PATH;
+  let destPath
+  if (process.env.NODE_ENV == 'development') {
+    destPath = conf.dest.development
+  } else {
+    destPath = conf.dest.production
+  }
+
+  const data = require(`../../${conf.json}`)
+  data.meta.domain = DOMAIN
+  data.meta.path = DIR.PATH
   return gulp.src(conf.src)
     .pipe($.plumber({
       errorHandler: $.notify.onError('<%= error.message %>')
@@ -18,7 +25,7 @@ gulp.task('pug', () => {
     }))
     .pipe($.pug(conf.opts))
     .pipe($.rename(path => {
-      path.dirname = path.dirname.replace('html', '.');
+      path.dirname = path.dirname.replace('html', '.')
     }))
-    .pipe(gulp.dest(conf.dest));
-});
+    .pipe(gulp.dest(destPath))
+})

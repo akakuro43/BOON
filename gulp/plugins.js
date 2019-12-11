@@ -1,1 +1,1 @@
-module.exports = require('gulp-load-plugins')();
+module.exports = require('gulp-load-plugins')()

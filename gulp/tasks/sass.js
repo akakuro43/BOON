@@ -4,6 +4,12 @@ const $ = require('../plugins');
 const conf = require('../conf').sass;
 
 gulp.task('sass', () => {
+  let destPath
+  if (process.env.NODE_ENV == 'development') {
+    destPath = conf.dest.development
+  } else {
+    destPath = conf.dest.production
+  }
   return gulp.src(conf.src)
     .pipe($.sass().on('error', $.sass.logError))
     .pipe($.autoprefixer({
@@ -12,17 +18,5 @@ gulp.task('sass', () => {
     .pipe($.rename(path => {
       path.dirname = path.dirname.replace('css', '.');
     }))
-    .pipe(gulp.dest(conf.dest));
-});
-
-gulp.task('sassWP', () => {
-  return gulp.src(conf.src)
-    .pipe($.sass().on('error', $.sass.logError))
-    .pipe($.autoprefixer({
-      cascade: false
-    }))
-    .pipe($.rename(path => {
-      path.dirname = path.dirname.replace('css', '.');
-    }))
-    .pipe(gulp.dest(conf.wordpress));
+    .pipe(gulp.dest(destPath));
 });

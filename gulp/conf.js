@@ -1,15 +1,16 @@
 // 設定ファイル
 // 対象パスやオプションを指定
 
-const DOMAIN = module.exports.DOMAIN = 'https://boon.com';
+const DOMAIN = module.exports.DOMAIN = 'https://boon.com'
 const DIR = module.exports.DIR = {
   PATH: '',
   SRC: 'src',
+  PUBLIC: 'public',
   DEST: 'dist',
   BUILD: 'docs'
-};
+}
 
-const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports.serve = {
   dest: {
@@ -36,7 +37,7 @@ module.exports.serve = {
       }
     }
   }
-};
+}
 
 module.exports.scripts = {
   src: [
@@ -45,10 +46,6 @@ module.exports.scripts = {
   dest: {
     development: `./${DIR.DEST}${DIR.PATH}/assets/js`,
     production: `./${DIR.BUILD}/assets/js`,
-  },
-  wordpress: {
-    development: `./${DIR.DEST_WP}/assets/js`,
-    production: `./${DIR.DEST_WP}/assets/js`,
   },
   webpack: {
 
@@ -96,7 +93,7 @@ module.exports.scripts = {
       new VueLoaderPlugin()
     ],
   },
-};
+}
 
 module.exports.pug = {
   src: [
@@ -104,12 +101,15 @@ module.exports.pug = {
     `!${DIR.SRC}/**/_**/*.pug`,
     `!${DIR.SRC}/**/_*.pug`
   ],
-  dest: `${DIR.DEST}${DIR.PATH}`,
+  dest: {
+    development: `${DIR.DEST}${DIR.PATH}`,
+    production: `${DIR.BUILD}${DIR.PATH}`,
+  },
   opts: {
     pretty: true
   },
   json: `${DIR.SRC}/data.json`,
-};
+}
 
 module.exports.sass = {
   src: [
@@ -117,51 +117,38 @@ module.exports.sass = {
     `!${DIR.SRC}/sass/**/_**/*.{sass,scss}`,
     `!${DIR.SRC}/sass/**/_*.{sass,scss}`
   ],
-  dest: `${DIR.DEST}${DIR.PATH}/assets/css`,
-  wordpress: `${DIR.DEST_WP}/assets/css`,
-};
-
-module.exports.replace = {
-  html: {
-    src: [
-      `${DIR.DEST}${DIR.PATH}/**/*.html`
-    ],
-    dest: `${DIR.BUILD}`,
-  }
-};
-
-module.exports.cleanCss = {
-  src: `${DIR.DEST}${DIR.PATH}/assets/css/main.css`,
-  dest: `${DIR.BUILD}/assets/css`,
-};
+  dest: {
+    development: `${DIR.DEST}${DIR.PATH}/assets/css`,
+    production: `${DIR.BUILD}${DIR.PATH}/assets/css`,
+  },
+}
 
 module.exports.copy = {
+  src: [
+    `${DIR.PUBLIC}/**/**/*.*`,
+  ],
   dest: {
-    src: [
-      `${DIR.SRC}/images/**/*.*`,
-      `${DIR.SRC}/fonts/**/*.*`,
-      `${DIR.SRC}/json/**/*.*`,
-    ],
-    dest: `${DIR.DEST}${DIR.PATH}/assets/`,
-    wordpress: `${DIR.DEST_WP}/assets/`,
-    opts: {
-      base: `${DIR.SRC}`
-    }
-  },
-  build: {
-    src: [
-      `${DIR.DEST}${DIR.PATH}/images/**/*.ico`,
-      `${DIR.DEST}${DIR.PATH}/images/**/no_compress/*.*`,
-      `${DIR.DEST}${DIR.PATH}/fonts/**/*.*`,
-      `${DIR.DEST}${DIR.PATH}/json/**/*.*`,
-    ],
-    dest: `${DIR.BUILD}/assets/`,
-    wordpress: `${DIR.DEST_WP}/assets/`,
+    dest: `${DIR.DEST}${DIR.PATH}/`,
     opts: {
       base: `${DIR.DEST}${DIR.PATH}`
     }
-  },
-};
+   },
+  build: {
+    dest: `${DIR.BUILD}${DIR.PATH}/`,
+    opts: {
+      base: `${DIR.BUILD}${DIR.PATH}`
+    }
+   },
+}
+
+module.exports.copyImage = {
+  dest: {
+    src: [
+      `${DIR.SRC}${DIR.PATH}/images/**/*.{jpg,jpeg,png,gif,svg}`,
+    ],
+    dest: `${DIR.DEST}/assets/images`,
+   }
+}
 
 module.exports.imagemin = {
   src: [
@@ -186,7 +173,7 @@ module.exports.imagemin = {
       ]
     },
   }
-};
+}
 
 module.exports.clean = {
   dest: {
@@ -194,8 +181,5 @@ module.exports.clean = {
   },
   build: {
     path: [`${DIR.BUILD}`]
-  },
-  wordpress: {
-    path: [`${DIR.DEST_WP}/assets`]
-  },
-};
+  }
+}
