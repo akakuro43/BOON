@@ -5,9 +5,7 @@
   "scripts": {
     "start": "npm run dev",
     "dev": "cross-env NODE_ENV=development gulp",
-    "build": "cross-env NODE_ENV=production gulp build",
-    "wp": "cross-env NODE_ENV=development gulp wp",
-    "buildWP": "cross-env NODE_ENV=production gulp buildWP"
+    "build": "cross-env NODE_ENV=production gulp build"
   },
   "engines": {
     "node": "10.13.0"

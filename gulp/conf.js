@@ -45,7 +45,7 @@ module.exports.scripts = {
   ],
   dest: {
     development: `./${DIR.DEST}${DIR.PATH}/assets/js`,
-    production: `./${DIR.BUILD}/assets/js`,
+    production: `./${DIR.BUILD}${DIR.PATH}/assets/js`,
   },
   webpack: {
 
@@ -132,35 +132,35 @@ module.exports.copy = {
     opts: {
       base: `${DIR.DEST}${DIR.PATH}`
     }
-   },
+  },
   build: {
     dest: `${DIR.BUILD}${DIR.PATH}/`,
     opts: {
       base: `${DIR.BUILD}${DIR.PATH}`
     }
-   },
+  },
 }
 
 module.exports.copyImage = {
   dest: {
     src: [
-      `${DIR.SRC}${DIR.PATH}/images/**/*.{jpg,jpeg,png,gif,svg}`,
+      `${DIR.SRC}/images/**/*.{jpg,jpeg,png,gif,svg}`,
     ],
-    dest: `${DIR.DEST}/assets/images`,
-   }
+    dest: `${DIR.DEST}${DIR.PATH}/assets/images`,
+  }
 }
 
 module.exports.imagemin = {
   src: [
-    `${DIR.SRC}${DIR.PATH}/images/**/*.{jpg,jpeg,png,gif,svg}`,
-    `!${DIR.SRC}${DIR.PATH}/images/**/no_compress/*.*`,
+    `${DIR.SRC}/images/**/*.{jpg,jpeg,png,gif,svg}`,
+    `!${DIR.SRC}/images/**/no_compress/*.*`,
   ],
-  dest: `${DIR.BUILD}/assets/images`,
+  dest: `${DIR.BUILD}${DIR.PATH}/assets/images`,
   opts: {
     pngquant: {
       quality: [.7, .8],
       speed: 1,
-      floyd:0
+      floyd: 0
     },
     mozjpeg: {
       quality: 70,
