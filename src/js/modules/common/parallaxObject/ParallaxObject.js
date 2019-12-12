@@ -40,7 +40,6 @@ export default class ParallaxObject {
       const y = rect.y
       this.targetHeight = rect.height
       this.targetCenter = y - by + ( this.targetHeight / 2 ) // ターゲットの中心までの距離(px)
-      console.log(y + " " + by)
       this.on()
     }
   }

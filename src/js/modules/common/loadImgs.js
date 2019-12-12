@@ -7,6 +7,7 @@ const loadImg = (target) => {
   return new Promise((resolve, reject) => {
     const img = new Image()
     img.onload = () => {
+      console.log('image loaded')
       resolve(img)
     }
     img.onerror = () => {

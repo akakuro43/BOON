@@ -11,6 +11,10 @@ import ParallaxObject from './modules/common/parallaxObject'
 import MouseParallaxObject from './modules/common/mouseParallaxObject/'
 import AnchorLink from './modules/common/AnchorLink'
 import SmoothScroll from './modules/common/SmoothScroll'
+import ReplaceImg from './modules/common/ReplaceImg'
+import Preload from './modules/common/Preload'
+
+
 
 import Scroll from './stores/Scroll'
 import Mouse from './stores/Mouse'
@@ -33,7 +37,9 @@ const modules = {
   parallaxObject: new ParallaxObject(stores),
   mouseParallaxObject: new MouseParallaxObject(stores),
   anchorLink: new AnchorLink(stores),
-};
+  replaceImg: new ReplaceImg(),
+  preload: new Preload(stores)
+}
 // functions
 const functions = {
   resize: () => {
@@ -42,7 +48,7 @@ const functions = {
     modules.appearObject.resize()
     modules.parallaxObject.resize()
     modules.mouseParallaxObject.resize()
-    modules.smoothScroll.resize()    
+    modules.smoothScroll.resize()
   },
   scroll: ()=> {
     stores.scroll.scroll()
@@ -65,6 +71,10 @@ const functions = {
 stores.device.resize(ua)
 // modules.accordion.stores = stores
 // modules.accordion.functions = functions
+modules.replaceImg.stores = stores
+modules.replaceImg.functions = functions
+modules.preload.stores = stores
+modules.preload.functions = functions
 let pageManager = new PageManager()
 pageManager.modules = modules
 pageManager.stores = stores
