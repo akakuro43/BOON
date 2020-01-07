@@ -1,9 +1,10 @@
 
 const initBeforeEnterPage = async (contentsArr, modules, stores, functions) => {
-
+  console.log("INDEX AA")
 }
 
 const initAfterEnterPage = (contentsArr, pageId, modules) => {
+  console.log("INDEX BB")
 }
 
 const initBeforeLeavePage = (contentsArr, pageId, modules, stores) => {

@@ -18,6 +18,7 @@ const initBeforeEnterPage = (contentsArr, isPageLoaded, pageId, modules, stores,
     console.log('loaded 1st')
   }
   modules.preload.load1st()
+  console.log("COM AA")
 }
 
 const initAfterEnterPage = (contentsArr, modules) => {
@@ -25,7 +26,7 @@ const initAfterEnterPage = (contentsArr, modules) => {
     console.log('loaded other')
   }
   modules.preload.loadOther()
-
+  console.log("COM BB")
 }
 
 const initBeforeLeavePage = (contentsArr, pageId, modules, stores) => {

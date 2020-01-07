@@ -13,7 +13,7 @@ export default class Prelaod {
     this.fnc1stCompleted = null
     this.fncOtherFileLoaded = null
     this.fncOtherCompleted = null
-    
+    this.progress = 0
   }
 
   init(elm) {
@@ -54,8 +54,10 @@ export default class Prelaod {
       let p = new Promise((resolve, reject) => {
         const img = new Image()
         img.onload = () => {
+          --this.count1st
+          this.progress = 1 - this.count1st / this.imgArray1st.length
           this.handleFileComplete1st()
-          if(--this.count1st == 0) {
+          if(this.count1st == 0) {
             this.handleComplete1st()
           }
           resolve(img)
@@ -85,7 +87,6 @@ export default class Prelaod {
   }
 
   handleFileComplete1st() {
-    
     if(this.fnc1stFileLoaded) this.fnc1stFileLoaded()
   }
 
