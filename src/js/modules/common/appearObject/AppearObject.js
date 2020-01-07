@@ -2,25 +2,27 @@ import getOffsetTop from '../../../utilities/getOffsetTop'
 const CLASSNAME_IS_APPEAR = 'is-appear'
 
 export default class AppearObject {
-  constructor(el,stores) {
+  constructor(el, stores) {
     this.el = el
     this.stores = stores
-    this.once = false
-    this.offset = 0.1
+    this.once = true
     this.isUnitPx = false
     this.trigger = null
     this.show = false
-    
+
     this.init()
   }
 
   init() {
+    let offset = this.el.dataset['offset']
+    let unit = this.el.dataset['unit']
+    this.isUnitPx = unit != '%'
     if (this.isUnitPx) {
       // offset:PX
-      this.offsetValue = this.offset != null ? this.offset : 100
+      this.offsetValue = offset ? offset : 100
     } else {
       // offset:%
-      this.offsetValue = this.offset != null ? this.offset : 0.1
+      this.offsetValue = offset ? offset : 0.1
     }
     this.resize()
   }
