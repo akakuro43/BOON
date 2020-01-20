@@ -170,7 +170,7 @@ export default class PageManager {
     }, TIME_REMOVE_PREV_CONTENTS)
 
     // ページ遷移後の各ページ初期化処理
-    commonFnc.initBeforeEnterPage(
+    await commonFnc.initBeforeEnterPage(
       [this.elm.contents],
       this.isPageLoaded, this.currentPageId, this.modules, this.stores, this.functions
     )

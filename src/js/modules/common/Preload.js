@@ -19,7 +19,7 @@ export default class Prelaod {
   init(elm) {
     let doc = elm == null ? document : elm
     // IMG
-    let imgs = document.querySelectorAll('img')
+    let imgs = doc.querySelectorAll('img')
     for (let i = 0; i < imgs.length; i++) {
       let img = imgs[i]
       let src = img.src
@@ -32,7 +32,7 @@ export default class Prelaod {
       }
     }
     // BG
-    let bgImgs = document.querySelectorAll(`.${CLASSNAME_PRELOAD_BG_IMG}`)
+    let bgImgs = doc.querySelectorAll(`.${CLASSNAME_PRELOAD_BG_IMG}`)
     for (let i = 0; i < bgImgs.length; i++) {
       let bgImg = bgImgs[i]
       let img = bgImg.ownerDocument.defaultView.getComputedStyle(bgImg, null).backgroundImage
