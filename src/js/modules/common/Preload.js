@@ -51,7 +51,7 @@ export default class Prelaod {
 
   load1st() {
     for(let i = 0; i<this.imgArray1st.length; i ++) {
-      let p = new Promise((resolve, reject) => {
+      // let p = new Promise((resolve, reject) => {
         const img = new Image()
         img.onload = () => {
           --this.count1st
@@ -60,13 +60,13 @@ export default class Prelaod {
           if(this.count1st == 0) {
             this.handleComplete1st()
           }
-          resolve(img)
+          // resolve(img)
         }
         img.onerror = () => {
-          reject(false)
+          // reject(false)
         }
         img.src = this.imgArray1st[i]
-      })
+      // })
     }
   }
   loadOther() {

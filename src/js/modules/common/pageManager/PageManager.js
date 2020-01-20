@@ -42,7 +42,7 @@ export default class PageManager {
     // ページのIDと機能を切り替え
     this.switchPage()
     // ページ共通処理実行
-    commonFnc.initBeforeEnterPage([document], this.isPageLoaded, this.currentPageId,  this.modules, this.stores, this.functions)
+    await commonFnc.initBeforeEnterPage([document], this.isPageLoaded, this.currentPageId,  this.modules, this.stores, this.functions)
     // ページ個別処理実行
     await this.currentPageFnc.initBeforeEnterPage(
       [this.elm.contents], this.modules, this.stores, this.functions

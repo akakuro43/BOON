@@ -1,24 +1,27 @@
 
 const initBeforeEnterPage = (contentsArr, isPageLoaded, pageId, modules, stores, functions) => {
-  modules.replaceImg.init(contentsArr[0])
-  modules.parallaxObject.init()
-  modules.mouseParallaxObject.init()
-  modules.appearObject.init()
-  modules.smoothScroll.init()
-  modules.preload.init(contentsArr[0])
-  
+  return new Promise(resolve => {
+    modules.replaceImg.init(contentsArr[0])
+    modules.parallaxObject.init()
+    modules.mouseParallaxObject.init()
+    modules.appearObject.init()
+    modules.smoothScroll.init()
+    modules.preload.init(contentsArr[0])
+    
 
-  if (!isPageLoaded) {
+    if (!isPageLoaded) {
 
-  } else {
+    } else {
 
-  }
+    }
 
-  modules.preload.fnc1stCompleted = () => {
-    console.log('loaded 1st')
-  }
-  modules.preload.load1st()
-  console.log("COM AA")
+    modules.preload.fnc1stCompleted = () => {
+      console.log('loaded 1st')
+      resolve()
+    }
+    modules.preload.load1st()
+    console.log("COM AA")
+  })
 }
 
 const initAfterEnterPage = (contentsArr, modules) => {
