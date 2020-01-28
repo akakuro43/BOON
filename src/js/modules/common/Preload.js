@@ -50,6 +50,7 @@ export default class Prelaod {
   }
 
   load1st() {
+    if(this.imgArray1st.length == 0) this.handleComplete1st()
     for(let i = 0; i<this.imgArray1st.length; i ++) {
       // let p = new Promise((resolve, reject) => {
         const img = new Image()
@@ -70,6 +71,7 @@ export default class Prelaod {
     }
   }
   loadOther() {
+    if(this.imgArrayOther.length == 0) this.handleCompleteOther()
     for(let i = 0; i<this.imgArrayOther.length; i ++) {
         const img = new Image()
         img.onload = () => {

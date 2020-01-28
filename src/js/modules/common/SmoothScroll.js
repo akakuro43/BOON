@@ -88,12 +88,14 @@ export default class SmoothScroll {
   }
 
   onFixedScroll() {
+    this.stores.scroll.isRun = false
     let mt = this.isOn ? this.stores.scroll.smoothScroll : this.stores.scroll.defaultScroll
     this.isRun = false
     this.elm.body.style.marginTop = `-${mt}px`
     this.elm.body.style.position = 'fixed'
   }
   offFixedScroll() {
+    this.stores.scroll.isRun = true
     this.elm.body.style.position = 'inherit'
     this.elm.body.style.marginTop = `0px`
     this.isRun = true

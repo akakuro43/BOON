@@ -6,13 +6,16 @@ export default class Scroll {
     this.scrollSpeed = 0; // スクロールスピード
     this.scrollProgress = 0; // プログレス
     this.direction = 'none'
+    this.isRun = true
   }
 
   scroll() {
+    if(!this.isRun) return
     this.defaultScroll = window.scrollY || window.pageYOffset || document.documentElement.scrollTop
   }
 
   update(val) {
+    if(!this.isRun) return
     this.smoothScroll = val.smoothScroll; // スムーススクロール地
     this.scrollSpeed = val.scrollSpeed; // スクロールスピード
     this.scrollProgress = val.scrollProgress; // プログレス
