@@ -16,10 +16,13 @@ import Preload from './modules/common/Preload'
 
 
 
+
 import Scroll from './stores/Scroll'
 import Mouse from './stores/Mouse'
 import Device from './stores/Device'
 
+// let useWebp = isWebP()
+// console.log(useWebp)
 
 let ua = new UserAgent()
 // stores
@@ -28,6 +31,8 @@ const stores = {
   mouse: new Mouse(),
   device: new Device(),
 }
+
+console.log(stores.device.isWebP)
 // modules
 const modules = {
   renderer: new Renderer(),
@@ -95,6 +100,7 @@ const onEvent = () => {
 
 const init = async () => {
   await sleep(100)
+  console.log(stores.device.isWebP)
   pageManager.modules.renderer.render = functions.update
   pageManager.onLoad()
 }

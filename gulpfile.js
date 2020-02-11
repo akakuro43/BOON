@@ -7,7 +7,7 @@ requireDir('./gulp/tasks')
 
 gulp.task('default', gulp.series(
   'cleanDest',
-  gulp.parallel('pug', 'sass', 'scripts', 'copyToDest', 'copyImage'),
+  gulp.parallel('pug', 'sass', 'scripts', 'copyToDest', 'copyImage', 'toWebp'),
   gulp.parallel('serve', 'watch'),
 ))
 
@@ -16,4 +16,5 @@ gulp.task('build', gulp.series(
   'cleanBuild',
   gulp.parallel('pug', 'sass', 'scripts', 'imagemin'),
   'copyToBuild',
+  'toWebp'
 ))

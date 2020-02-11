@@ -8,6 +8,19 @@ export default class Device {
     this.isSP = false
     this.isPC = false
     this.device = '' // pc or sp
+    this.isWebP = false
+
+    this.checkSupportWebP()
+  }
+
+  checkSupportWebP() {
+    let WebP = new Image();
+    WebP.onload = WebP.onerror =  () => {
+      let isSupported = (WebP.height === 2)
+      // console.log(isSupported)
+      this.isWebP  = isSupported
+    };
+    WebP.src = 'data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA';
   }
 
   resize(val) {

@@ -150,6 +150,17 @@ module.exports.copyImage = {
   }
 }
 
+
+module.exports.toWebp = {
+  src: [
+    `${DIR.SRC}/images/**/*.{jpg,jpeg,png,gif,svg}`,
+    `!${DIR.SRC}/images/**/no_compress/*.*`,
+  ],
+  buildSrc: `${DIR.BUILD}${DIR.PATH}/assets/images/**/*.{jpg,jpeg,png,gif,svg}`,
+  dest: `${DIR.DEST}${DIR.PATH}/assets/images`,
+  build: `${DIR.BUILD}${DIR.PATH}/assets/images`
+}
+
 module.exports.imagemin = {
   src: [
     `${DIR.SRC}/images/**/*.{jpg,jpeg,png,gif,svg}`,

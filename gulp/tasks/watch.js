@@ -40,6 +40,13 @@ gulp.task('watch', () => {
 
   gulp.watch(
     [
+      `./${DIR.SRC}/images/**/*.{jpg,jpeg,png,gif,svg}`,
+    ],
+    gulp.series('toWebp', reload)
+  )
+
+  gulp.watch(
+    [
       `./${DIR.PUBLIC}/**/**/*.*`,
     ],
     gulp.series('copyToDest', reload)
