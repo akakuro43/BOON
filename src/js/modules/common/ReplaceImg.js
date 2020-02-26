@@ -19,7 +19,8 @@ export default class ReplaceImg {
     const elmBgImgs = [].slice.call( doc.querySelectorAll( '[data-src-bg]' ) )
     elmBgImgs.forEach( ( elmBgImg ) => {
       let src = elmBgImg.dataset.srcBg
-      src = this.replace(src)
+      let notUsedWebp = elmBgImg.dataset.notUsedWebp !== undefined
+      src = this.replace(src, notUsedWebp)
       elmBgImg.style.backgroundImage = `url(${src})`
     })
 
