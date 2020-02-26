@@ -164,6 +164,7 @@ export default class PageManager {
       }
       
       this.elm.page.classList.remove(this.beforePageId)
+      this.modules.smoothScroll.beforeEnterActions();
       this.modules.smoothScroll.resize()
       this.functions.resize()
       
