@@ -16,7 +16,16 @@ export default class Prelaod {
     this.progress = 0
   }
 
+  reset() {
+    this.imgArray1st = []
+    this.imgArrayOther = []
+    this.count1st = 0
+    this.countOther = 0
+    this.progress = 0
+  }
+
   init(elm) {
+    this.reset()
     let doc = elm == null ? document : elm
     // IMG
     let imgs = doc.querySelectorAll('img')
